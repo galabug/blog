@@ -68,7 +68,7 @@ ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "先用用看这个模板。"
+sidebar-about-description: "先用用看。"
 sidebar-avatar: /img/v1/galabug.jpg     # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -81,10 +81,10 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 
 # Friends
 friends: [
-    {
-        title: "郑乾坤的博客",
-        href: "http://www.zhengqk.com"
-    }
+    # {
+    #     title: "郑乾坤的博客",
+    #     href: "http://www.zhengqk.com"
+    # }
 ]
 
 theme: jekyll-theme-slate
