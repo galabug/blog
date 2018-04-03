@@ -1,4 +1,4 @@
-# zhulj blog 模板
+# 祝立健的博客 模板
 
 ### [模板在这里](http://huangxuan.me/huxblog-boilerplate/)
 
