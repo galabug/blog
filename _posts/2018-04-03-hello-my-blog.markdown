@@ -54,3 +54,20 @@ tags:
 
 
 ### NPM [NPM是随同NodeJS一起安装的包管理工具](https://galabug.github.io/2018/04/04/js-node-npm/)
+
+### Node.js REPL(交互式解释器)
+>Node.js REPL(Read Eval Print Loop:交互式解释器) 表示一个电脑的环境，类似 Window 系统的终端或 Unix/Linux shell，我们可以在终端中输入命令，并接收系统的响应。
+
+Node 自带了交互式解释器，可以执行以下任务：
+  - 读取 - 读取用户输入，解析输入了Javascript 数据结构并存储在内存中。
+  - 执行 - 执行输入的数据结构
+  - 打印 - 输出结果
+  - 循环 - 循环操作以上步骤直到用户两次按下 ctrl-c 按钮退出。
+
+* 输入以下命令来启动 Node 的终端：
+```js
+ node
+```
+
+### Node.js 回调函数
+
