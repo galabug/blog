@@ -128,3 +128,20 @@ tags:
     > 运行程序所在的平台系统 'darwin', 'freebsd', 'linux', 'sunos' 或 'win32'
   16.	mainModule
     > require.main 的备选方法。不同点，如果主模块在运行时改变，require.main可能会继续返回老的模块。可以认为，这两者引用了同一个模块。
+
+### Node.js Express 框架
+  Express 简介
+  > Express 是一个简洁而灵活的 node.js Web应用框架, 提供了一系列强大特性帮助你创建各种 Web 应用，和丰富的 HTTP 工具。
+
+  Express 框架核心特性：
+  - 可以设置中间件来响应 HTTP 请求。
+  - 定义了路由表用于执行不同的 HTTP 请求动作。
+  - 可以通过向模板传递参数来动态渲染 HTML 页面。
+
+  * 安装 Express
+  * 安装 Express 并将其保存到依赖列表中：
+```js
+  cnpm install express --save
+```
+
+
