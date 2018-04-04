@@ -71,3 +71,30 @@ Node 自带了交互式解释器，可以执行以下任务：
 
 ### Node.js 回调函数
 
+>Node.js 异步编程的直接体现就是回调。
+
+>回调函数在完成任务后就会被调用，Node 使用了大量的回调函数，Node 所有 API 都支持回调函数。
+
+1. 阻塞代码实例
+```js 
+  var fs = require("fs");
+  var data = fs.readFileSync('input.txt');
+
+  console.log(data.toString());
+  console.log("程序执行结束!");
+```
+2. 非阻塞代码实例
+```js
+ var fs = require("fs");
+
+fs.readFile('input.txt', function (err, data) {
+    if (err) return console.error(err);
+    console.log(data.toString());
+});
+
+console.log("程序执行结束!");
+```
+
+
+
+
