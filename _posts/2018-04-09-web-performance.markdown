@@ -18,13 +18,13 @@ tags:
   ![](https://galabug.github.io/img/v1/20180409/1.png)
 
   网页的生成过程，大致可以分成五步。
-
-  >    1.HTML代码转化成DOM
-  >    2.CSS代码转化成CSSOM（CSS Object Model）
-  >    3.结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息）
-  >    4.生成布局（layout），即将所有渲染树的所有节点进行平面合成
-  >    5.将布局绘制（paint）在屏幕上
-
+  ```js
+    1.HTML代码转化成DOM
+    2.CSS代码转化成CSSOM（CSS Object Model）
+    3.结合DOM和CSSOM，生成一棵渲染树（包含每个节点的视觉信息）
+    4.生成布局（layout），即将所有渲染树的所有节点进行平面合成
+    5.将布局绘制（paint）在屏幕上
+  ```
   这五步里面，第一步到第三步都非常快，耗时的是第四步和第五步。
 
   **"生成布局"（flow）和"绘制"（paint）这两步，合称为"渲染"（render）。**
@@ -32,10 +32,10 @@ tags:
 
 
   tips:
-  > 1. js执行会阻塞DOM树的解析和渲染
-  > 2. css加载不会阻塞DOM树的解析 
-  > 3. css加载会阻塞DOM树的渲染 
-  > 4. css加载会阻塞后面js语句的执行
+  1. js执行会阻塞DOM树的解析和渲染
+  2. css加载不会阻塞DOM树的解析 
+  3. css加载会阻塞DOM树的渲染 
+  4. css加载会阻塞后面js语句的执行
   优化：
   - css的引入在head中（让dom一渲染就有样式），
   - js的引入放在body后面，可以使页面展示出来的速度变快
@@ -62,10 +62,10 @@ tags:
 
   前面提到，DOM变动和样式变动，都会触发重新渲染。但是，浏览器已经很智能了，会尽量把所有的变动集中在一起，排成一个队列，然后一次性执行，尽量避免多次重新渲染。
 
-    ```js
-      div.style.color = 'blue';
-      div.style.marginTop = '30px';
-    ```
+  ```js
+    div.style.color = 'blue';
+    div.style.marginTop = '30px';
+  ```
   
   上面代码中，div元素有两个样式变动，但是浏览器只会触发一次重排和重绘。
 
