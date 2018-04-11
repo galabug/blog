@@ -37,9 +37,26 @@ tags:
   3. css加载会阻塞DOM树的渲染 
   4. css加载会阻塞后面js语句的执行
   
-  **优化：**
+  **优化1：（过时）**
   - css的引入在head中（让dom一渲染就有样式），
   - js的引入放在body后面，可以使页面展示出来的速度变快
+  - 缺点：要等body解析完成后才去下载js，总体展示完整页面的时间稍微变长
+
+  **优化2：**
+  - 使用script标签的属性 async defer，让js的script的下载（只是下载不执行）和dom解析同时异步进行
+
+  - defer:所有元素解析完成之后，才执行js，并且按script位置顺序，顺序执行，使用场景较多（相当于没有缺点的优化1）
+  ```js
+    <script defer src="example.js"></script>
+    <script defer src="example1.js"></script>
+  ```
+  - async：不能保证js的执行时间和顺序，使用场景较少
+  ```js
+    <script async src="example.js"></script>
+    <script async src="example1.js"></script>
+  ```
+  下图可以直观的看出区别:
+    ![](https://galabug.github.io/img/v1/20180409/3.png)
 
 ## 二、重排和重绘
 
