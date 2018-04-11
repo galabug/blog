@@ -61,7 +61,7 @@ tags:
     <script async src="example1.js"></script>
   ```
   下图可以直观的看出区别:
-  ![](https://galabug.github.io/img/v1/20180409/3.jpg)
+  ![](https://galabug.github.io/img/v1/20180409/3.png)
 
 ## 二、重排和重绘
 
