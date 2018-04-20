@@ -89,7 +89,7 @@ tags:
 
 ### 2.2 观察者模式Observer：定义了对象之间的一对多依赖。当一个对象发生状态改变，它的所有依赖者都会收到通知并自动更新。
 
-  ```java
+```java
 
   <interface>               <interface> 
   Subject                 Observer
@@ -98,11 +98,9 @@ tags:
   removeObserver()        
   notifyObserver()        
 
-  ```
 
-    ```java
 
-  public class WeatherData implements Subject{
+public class WeatherData implements Subject{
     private ArrayList observers;
     private float temp;
     private float humidity;
@@ -129,11 +127,10 @@ tags:
     public void changed(){
       notifyObserver();
     }
-    // 其他方法    
-  }                
+    // 其他方法 
+} 
 
-
-  public class Display implements Observer{
+public class Display implements Observer{
     private Subject weatherData;
     private float temp;
     private float humidity;
@@ -143,14 +140,13 @@ tags:
       this.weatherData=weatherData;
       weatherData.registerObserver(this);
     }
-     public void update(float temp,float humidity,float pressure){
+    public void update(float temp,float humidity,float pressure){
 
-     }
+    }
+}  
+```
 
-  }  
-
-  ```
--- java API内置的观察者模式，java.util包里Observer接口和Observable类。
+###### java API内置的观察者模式，java.util包里Observer接口和Observable类。
 
 ###### 可观察者：继承java.util.Observable，产生可观察者，然后
   1. 先调用setChange()方法，标记状态已经改变的事实。
@@ -164,7 +160,7 @@ tags:
 ###### push:通过arg主题把数据推给观察者，pull：观察者也可以直接从o主题对象直接获取想要的数据--拉
 ``
 
-    ```java
+```java
 
   public class WeatherData implements Observable{
     private float temp;
@@ -200,7 +196,7 @@ tags:
         if(obs instanceof WeatherData){
           WeatherData wea=(WeatherData)obs;
           this...
-          
+
         }
      }
      
