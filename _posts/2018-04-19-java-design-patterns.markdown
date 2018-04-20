@@ -151,18 +151,17 @@ public class Display implements Observer{
 ###### 可观察者：继承java.util.Observable，产生可观察者，然后
   1. 先调用setChange()方法，标记状态已经改变的事实。
   2. 然后调用两种notifyObservers()方法
-    -- notifyObservers()  
-    -- notifyObservers(Object arg) -->传送任何数据对象给每一个观察者
+    - notifyObservers()  
+    - notifyObservers(Object arg) -->传送任何数据对象给每一个观察者
 ###### 观察者：实现java.util.Observer接口，产生观察者
-  -- update(Observable o,Object arg);
-  --o:主题本身当做一个参数，让观察者知道哪个主题通知了它
-  --arg:传入的数据对象，如果没有说明则为空
+  - update(Observable o,Object arg);
+  - o:主题本身当做一个参数，让观察者知道哪个主题通知了它
+  - arg:传入的数据对象，如果没有说明则为空
 ###### push:通过arg主题把数据推给观察者，pull：观察者也可以直接从o主题对象直接获取想要的数据--拉
-``
 
 ```java
 
-  public class WeatherData implements Observable{
+public class WeatherData implements Observable{
     private float temp;
     private float humidity;
     private float pressure;
@@ -174,15 +173,15 @@ public class Display implements Observer{
       notifyObservers();
     }
 
-     public void setTemp(float temp,float humidity,float pressure){
-       this...
-       changed();
-     }
+    public void setTemp(float temp,float humidity,float pressure){
+      this...
+      changed();
+    }
     // 其他方法    
-  }                
+}                
 
 
-  public class Display implements Observer{
+public class Display implements Observer{
     private Observable observable;
     private float temp;
     private float humidity;
@@ -192,18 +191,17 @@ public class Display implements Observer{
       this.observable=observable;
       observable.addObserver(this);
     }
-     public void update(Observable obs,Object args){
-        if(obs instanceof WeatherData){
-          WeatherData wea=(WeatherData)obs;
-          this...
+    public void update(Observable obs,Object args){
+      if(obs instanceof WeatherData){
+        WeatherData wea=(WeatherData)obs;
+        this...
 
-        }
-     }
-     
+      }
+    }
 
-  }  
+}  
 
-  ```
+ ```
 
 
 ### 2.3 装饰者模式：
