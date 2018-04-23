@@ -204,9 +204,78 @@ public class Display implements Observer{
  ```
 
 
-### 2.3 装饰者模式：
+### 2.3 装饰者模式：动态地将责任附加到对象上。要扩展功能，装饰者提供有利于继承的另一种选择。
 
-  ```java
+- JAVA I/O类
+```java
+
+
+
+```
+### 2.4 工厂方法模式：定义了一个创建对象的接口，但子类决定要实例化的类是哪一个。工厂方法让类 把实例化推迟到子类。
+- 一种类似模式的编程习惯：简单工厂模式。
+- 工厂方法用来处理对象的创建，并将这样的行为封装在子类中。这样，关于超类的代码就和子类对象的创建代码解耦了。
+- 工厂方法模式Factory Method Pattern 通过让子类决定如何创建对象，来将对象的创建过程封装。注意：这里的‘决定’是指，选择了哪个子类，自然就决定了实际创建的产品是什么。
+
+
+### 2.5 单例模式：确保一个类只能创建一个实例，并提供全局访问点。
+
+```java
+public class Singleton{
+  private static Singleton uniqueInstance;
+  private Signleton(){}//私有化构造函数
+  public static Sinleton getInstance(){//提供全局访问点
+    if(uniqueInstance==null){
+        uniqueInstance=new Singleton();
+    }
+    return uniqueInstance;
+  }
+}
+//***********多线程时上面有问题*************
+
+//***********synchronized能解决多线程问题，但是会降低性能*************
+public class Singleton{
+  private static Singleton uniqueInstance;
+  private Signleton(){}//私有化构造函数
+  public static synchronized Sinleton getInstance(){//提供全局访问点
+    if(uniqueInstance==null){
+        uniqueInstance=new Singleton();
+    }
+    return uniqueInstance;
+  }
+}
+
+//***********JVM加载类时，初始化实例*************
+public class Singleton{
+  private static Singleton uniqueInstance=new Singleton();
+  private Signleton(){}//私有化构造函数
+  public static Sinleton getInstance(){//提供全局访问点
+    return uniqueInstance;
+  }
+}
+
+//双重检查加锁 java1.5以上
+public class Singleton{
+  private static volatile uniqueInstance;
+  private Signleton(){}//私有化构造函数
+  public static Sinleton getInstance(){//提供全局访问点
+    if(uniqueInstance==null){
+        synchronized(Singleton.class){
+          if(uniqueInstance==null){
+              uniqueInstance=new Singleton();
+          }
+        }
+    }
+    return uniqueInstance;
+  }
+}
+
+```
+### 2.6 命令模式：将“请求”封装成对象，以便使用不同的请求、队列或者日志来参数化其他对象。命令模式支持可撤销的操作。
+
+
+
+### 2.7 适配器模式：将一个类的接口，转换成客户期望的另一个接口。让原本接口不兼容的类可以合作无间。
 
 
 
@@ -216,6 +285,7 @@ public class Display implements Observer{
 3. 多用组合，少用继承。“有一个”关系比“是一个”更好。（把两个或以上类结合起来使用--组合composition）。
 4. 为了交互对象之间的松耦合设计而努力。
 5. 类应该对扩展开放，对修改关闭。
+6. 要依赖抽象，不要依赖具体类。
 
 ## tips
 
@@ -225,8 +295,8 @@ public class Display implements Observer{
   -- 知道封装、抽象、继承、多态，并不会让你马上变成好的面向对象设计者。
   -- 设计大师关心的是建立弹性的设计，可以维护，可以应付变化。
   -- 建立可维护的的OO系统，要诀：**
-  **
  
+  **
 
 
 
