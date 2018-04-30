@@ -24,7 +24,7 @@ tags:
 * 新版的nodejs已经集成了npm
 
 使用淘宝镜像的命令：
-> cnpm install npm -g
+> npm install cnpm -g
 
 #### 使用 npm 命令安装模块
 
